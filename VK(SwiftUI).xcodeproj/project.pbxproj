@@ -8,17 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		05724243279071EB000A28EA /* VK_SwiftUI_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05724242279071EB000A28EA /* VK_SwiftUI_App.swift */; };
-		05724245279071EB000A28EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05724244279071EB000A28EA /* ContentView.swift */; };
 		05724247279071ED000A28EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05724246279071ED000A28EA /* Assets.xcassets */; };
 		0572424A279071ED000A28EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05724249279071ED000A28EA /* Preview Assets.xcassets */; };
+		057242972794EB30000A28EA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057242962794EB30000A28EA /* LoginView.swift */; };
+		0572429B2794EF3E000A28EA /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0572429A2794EF3E000A28EA /* FriendCell.swift */; };
+		0572429D2794EF4F000A28EA /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0572429C2794EF4F000A28EA /* GroupCell.swift */; };
+		0572429F27962CC8000A28EA /* CircleAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0572429E27962CC8000A28EA /* CircleAvatar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0572423F279071EB000A28EA /* VK(SwiftUI).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VK(SwiftUI).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05724242279071EB000A28EA /* VK_SwiftUI_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VK_SwiftUI_App.swift; sourceTree = "<group>"; };
-		05724244279071EB000A28EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		05724246279071ED000A28EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05724249279071ED000A28EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		057242962794EB30000A28EA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		0572429A2794EF3E000A28EA /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		0572429C2794EF4F000A28EA /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		0572429E27962CC8000A28EA /* CircleAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleAvatar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +57,11 @@
 		05724241279071EB000A28EA /* VK(SwiftUI) */ = {
 			isa = PBXGroup;
 			children = (
+				057242A027962DEA000A28EA /* Modifiers */,
 				05724242279071EB000A28EA /* VK_SwiftUI_App.swift */,
-				05724244279071EB000A28EA /* ContentView.swift */,
+				057242962794EB30000A28EA /* LoginView.swift */,
+				0572429A2794EF3E000A28EA /* FriendCell.swift */,
+				0572429C2794EF4F000A28EA /* GroupCell.swift */,
 				05724246279071ED000A28EA /* Assets.xcassets */,
 				05724248279071ED000A28EA /* Preview Content */,
 			);
@@ -65,6 +74,14 @@
 				05724249279071ED000A28EA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		057242A027962DEA000A28EA /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				0572429E27962CC8000A28EA /* CircleAvatar.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +154,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05724245279071EB000A28EA /* ContentView.swift in Sources */,
+				057242972794EB30000A28EA /* LoginView.swift in Sources */,
+				0572429B2794EF3E000A28EA /* FriendCell.swift in Sources */,
 				05724243279071EB000A28EA /* VK_SwiftUI_App.swift in Sources */,
+				0572429D2794EF4F000A28EA /* GroupCell.swift in Sources */,
+				0572429F27962CC8000A28EA /* CircleAvatar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +297,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,6 +327,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
