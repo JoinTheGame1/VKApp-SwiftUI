@@ -6,21 +6,24 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct FriendRow: View {
     var friend: Friend
     
     var body: some View {
         HStack(spacing: 4) {
-            Image(friend.avatarName)
+            KFImage(URL(string: friend.photo))
                 .resizable()
                 .modifier(CircleAvatar(frameWidth: 52, frameHeight: 52, borderColor: .secondary))
                 .padding(4)
             VStack(alignment: .leading, spacing: 4) {
                 Text(friend.name)
-                Text(friend.city)
-                    .font(.system(size: 13))
-                    .foregroundColor(.gray)
+                if !friend.cityName.isEmpty {
+                    Text(friend.cityName)
+                        .font(.system(size: 13))
+                        .foregroundColor(.gray)
+                }
             }
             Spacer()
             Group {

@@ -6,16 +6,17 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ContainerView: View {
-    @State private var shouldShowMainView: Bool = true
+    @ObservedObject var session = MySession.shared
     
     var body: some View {
         NavigationView {
             HStack {
-                LoginView(isLoggedIn: $shouldShowMainView)
+                VKLoginWebView()
             }
-            .fullScreenCover(isPresented: $shouldShowMainView, onDismiss: nil) {
+            .fullScreenCover(isPresented: $session.isAutorized, onDismiss: nil) {
                 MainView()
             }
         }
