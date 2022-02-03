@@ -16,7 +16,9 @@ struct CommunityRow: View {
         HStack(spacing: 4) {
             KFImage(URL(string: community.photo))
                 .resizable()
-                .modifier(CircleAvatar(frameWidth: 52, frameHeight: 52, borderColor: .secondary))
+                .modifier(CircleAvatar(frameWidth: 52,
+                                       frameHeight: 52,
+                                       borderColor: .secondary))
                 .padding(4)
             VStack(alignment: .leading) {
                 Text(community.name)

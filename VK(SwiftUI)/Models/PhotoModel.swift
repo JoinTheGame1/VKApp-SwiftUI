@@ -18,6 +18,7 @@ struct Photos: Codable {
 class Photo: Object, Codable {
     @objc dynamic var ownerId: Int = 0
     var sizes = List<Size>()
+    var fineSizeUrl: String { return sizes.last?.url ?? "" }
     @objc dynamic var likes: Like?
 
     enum CodingKeys: String, CodingKey {

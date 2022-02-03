@@ -26,12 +26,13 @@ struct VKLoginWebView: UIViewRepresentable {
         components.host = "oauth.vk.com"
         components.path = "/authorize"
         components.queryItems = [
-            URLQueryItem(name: "client_id", value: "8065345"),
+            URLQueryItem(name: "client_id", value: "8069974"),
             URLQueryItem(name: "scope", value: "262150"),
             URLQueryItem(name: "display", value: "mobile"),
             URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
             URLQueryItem(name: "response_type", value: "token"),
-            URLQueryItem(name: "v", value: "5.131")
+            URLQueryItem(name: "v", value: "5.131"),
+            URLQueryItem(name: "revoke", value: "1")
         ]
         return components.url.map { URLRequest(url: $0) }
     }

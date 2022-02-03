@@ -15,12 +15,12 @@ struct MainView: View {
                     Image(systemName: "person")
                     Text("Profile")
                 }
-            FriendsView(friendsVM: FriendsViewModel(api: FriendsAPI()))
+            FriendsView(friendsVM: FriendsViewModel())
                 .tabItem {
                     Image(systemName: "person.2")
                     Text("Friends")
                 }
-            CommunitiesView(communitiesVM: CommunitiesViewModel(api: CommunitiesAPI()))
+            CommunitiesView(communitiesVM: CommunitiesViewModel())
                 .tabItem {
                     Image(systemName: "person.3")
                     Text("Communities")

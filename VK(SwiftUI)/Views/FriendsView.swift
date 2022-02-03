@@ -19,10 +19,12 @@ struct FriendsView: View {
                         if friend.prefix == letter {
                             ZStack {
                                 FriendRow(friend: friend)
-                                NavigationLink(destination: FriendPhotosView(friend: friend)) {
+                                NavigationLink(destination: FriendPhotosView(
+                                    friendPhotosVM: FriendPhotosViewModel(owner: friend))
+                                ) {
                                     EmptyView()
                                 }
-                                .opacity(0)
+                                .frame(width: 0, height: 0)
                             }
                         }
                     }
