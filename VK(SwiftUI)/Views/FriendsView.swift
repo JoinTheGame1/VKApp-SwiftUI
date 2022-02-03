@@ -26,6 +26,7 @@ struct FriendsView: View {
                             }
                         }
                     }
+                    .listRowSeparator(.hidden)
                 }
             }
             .listStyle(.sidebar)

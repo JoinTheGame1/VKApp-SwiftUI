@@ -9,6 +9,7 @@ import SwiftUI
 import Kingfisher
 
 struct FriendRow: View {
+    
     var friend: Friend
     
     var body: some View {

@@ -15,6 +15,7 @@ struct CommunitiesView: View {
         NavigationView {
             List(communitiesVM.communities, id: \.self) { community in
                 CommunityRow(community: community)
+                    .listRowSeparator(.hidden)
             }
             .listStyle(.sidebar)
             .navigationBarTitle(Text("Communities"))

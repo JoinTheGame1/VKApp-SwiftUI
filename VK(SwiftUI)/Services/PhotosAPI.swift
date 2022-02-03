@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 
 final class PhotosAPI {
+    
     let baseUrl = "https://api.vk.com/method"
     let token = MySession.shared.token
     let version = "5.131"

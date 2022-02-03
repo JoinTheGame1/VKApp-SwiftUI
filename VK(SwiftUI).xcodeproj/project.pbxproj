@@ -41,6 +41,8 @@
 		05DE4B9827A7B2F0002309FD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 05DE4B9727A7B2F0002309FD /* Alamofire */; };
 		05DE4B9A27A7B42D002309FD /* VKLoginWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DE4B9927A7B42D002309FD /* VKLoginWebView.swift */; };
 		05DE4B9C27A7BBD4002309FD /* CommunitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DE4B9B27A7BBD4002309FD /* CommunitiesViewModel.swift */; };
+		05DE4BA027AB1C7A002309FD /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DE4B9F27AB1C7A002309FD /* RealmService.swift */; };
+		05DE4BA227AB737A002309FD /* DetachableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DE4BA127AB737A002309FD /* DetachableObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +77,8 @@
 		05DE4B9127A7B122002309FD /* FriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
 		05DE4B9927A7B42D002309FD /* VKLoginWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKLoginWebView.swift; sourceTree = "<group>"; };
 		05DE4B9B27A7BBD4002309FD /* CommunitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitiesViewModel.swift; sourceTree = "<group>"; };
+		05DE4B9F27AB1C7A002309FD /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		05DE4BA127AB737A002309FD /* DetachableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetachableObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,7 @@
 				05DE4B7F27A7AB46002309FD /* PhotosAPI.swift */,
 				05DE4B8227A7AB47002309FD /* CommunitiesAPI.swift */,
 				05DE4B8127A7AB46002309FD /* NewsAPI.swift */,
+				05DE4B9F27AB1C7A002309FD /* RealmService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 		057242AE27966B65000A28EA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				05DE4BA127AB737A002309FD /* DetachableObject.swift */,
 				05DE4B8D27A7ACA8002309FD /* MyDateFormatter.swift */,
 				05DE4B8C27A7ACA8002309FD /* MyRelativeDateTimeFormatter.swift */,
 				057242AF27966B7A000A28EA /* UIApplication+Extension.swift */,
@@ -305,6 +311,8 @@
 				057242B027966B7A000A28EA /* UIApplication+Extension.swift in Sources */,
 				057242C727A0DBF8000A28EA /* ProfileView.swift in Sources */,
 				05DE4B9C27A7BBD4002309FD /* CommunitiesViewModel.swift in Sources */,
+				05DE4BA227AB737A002309FD /* DetachableObject.swift in Sources */,
+				05DE4BA027AB1C7A002309FD /* RealmService.swift in Sources */,
 				05DE4B9A27A7B42D002309FD /* VKLoginWebView.swift in Sources */,
 				05DE4B8E27A7ACA8002309FD /* MyRelativeDateTimeFormatter.swift in Sources */,
 				057242B3279F5BAE000A28EA /* ContainerView.swift in Sources */,

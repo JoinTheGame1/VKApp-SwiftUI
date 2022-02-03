@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FriendPhotosView: View {
+    
     var friend: Friend
     let layout = [
         GridItem(.adaptive(minimum: 120))

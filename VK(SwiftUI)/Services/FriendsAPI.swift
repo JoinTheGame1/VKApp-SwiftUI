@@ -10,6 +10,7 @@ import Alamofire
 import Realm
 
 final class FriendsAPI {
+    
     let baseUrl = "https://api.vk.com/method"
     let token = MySession.shared.token
     let userId = MySession.shared.userId

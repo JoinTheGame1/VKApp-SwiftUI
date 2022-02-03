@@ -9,6 +9,7 @@ import SwiftUI
 import RealmSwift
 
 struct ContainerView: View {
+    
     @ObservedObject var session = MySession.shared
     
     var body: some View {

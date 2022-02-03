@@ -25,7 +25,6 @@ class Community: Object, Codable, ProfileRepresentable {
     override class func primaryKey() -> String? {
         return "id"
     }
-    
 }
 
 

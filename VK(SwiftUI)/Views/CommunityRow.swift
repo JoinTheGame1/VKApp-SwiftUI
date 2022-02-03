@@ -9,6 +9,7 @@ import SwiftUI
 import Kingfisher
 
 struct CommunityRow: View {
+    
     var community: Community
     
     var body: some View {
