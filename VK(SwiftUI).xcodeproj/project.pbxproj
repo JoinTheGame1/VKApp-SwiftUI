@@ -43,6 +43,7 @@
 		05DE4B9C27A7BBD4002309FD /* CommunitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DE4B9B27A7BBD4002309FD /* CommunitiesViewModel.swift */; };
 		05DE4BA027AB1C7A002309FD /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DE4B9F27AB1C7A002309FD /* RealmService.swift */; };
 		05DE4BA227AB737A002309FD /* DetachableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DE4BA127AB737A002309FD /* DetachableObject.swift */; };
+		05DE4BA427AB858E002309FD /* CodingStyleWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DE4BA327AB858E002309FD /* CodingStyleWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		05DE4B9B27A7BBD4002309FD /* CommunitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitiesViewModel.swift; sourceTree = "<group>"; };
 		05DE4B9F27AB1C7A002309FD /* RealmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		05DE4BA127AB737A002309FD /* DetachableObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetachableObject.swift; sourceTree = "<group>"; };
+		05DE4BA327AB858E002309FD /* CodingStyleWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingStyleWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				0572429E27962CC8000A28EA /* CircleAvatar.swift */,
+				05DE4BA327AB858E002309FD /* CodingStyleWrapper.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				05DE4B8E27A7ACA8002309FD /* MyRelativeDateTimeFormatter.swift in Sources */,
 				057242B3279F5BAE000A28EA /* ContainerView.swift in Sources */,
 				05DE4B9227A7B122002309FD /* FriendsViewModel.swift in Sources */,
+				05DE4BA427AB858E002309FD /* CodingStyleWrapper.swift in Sources */,
 				05DE4B8627A7AB47002309FD /* CommunitiesAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
