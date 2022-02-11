@@ -9,7 +9,7 @@ import SwiftUI
 import Kingfisher
 
 struct CommunityRow: View {
-    
+
     var community: Community
     
     var body: some View {
@@ -26,6 +26,7 @@ struct CommunityRow: View {
                         .foregroundColor(.gray)
                         .lineLimit(2)
                 }
+
             }
             Spacer()
         }

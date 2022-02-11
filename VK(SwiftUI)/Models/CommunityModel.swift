@@ -26,6 +26,3 @@ class Community: Object, Codable, ProfileRepresentable {
         return "id"
     }
 }
-
-
-
