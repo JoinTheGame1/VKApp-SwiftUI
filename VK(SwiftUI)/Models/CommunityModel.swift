@@ -1,32 +1,28 @@
 //
 //  CommunityModel.swift
-//  VK(SwiftUI)
+//  SocialWeb
 //
-//  Created by Никитка on 25.01.2022.
+//  Created by Никитка on 11.06.2021.
 //
 
 import Foundation
+import RealmSwift
 
-class Community: Identifiable {
-    var id: String { return name }
-    var name: String
-    var description: String
-    var avatarName: String
-    
-    internal init(name: String, description: String, avatarName: String) {
-        self.name = name
-        self.description = description
-        self.avatarName = avatarName
+// MARK: - Group
+class Community: Object, Codable, ProfileRepresentable {
+    @objc dynamic var id: Int = 0
+    @objc dynamic var name: String = ""
+    @objc dynamic var photo: String = ""
+    @objc dynamic var text: String = ""
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case photo = "photo_200"
+        case text = "description"
     }
-}
-
-struct CommunitiesStorage {
-    static let communities = [
-        Community(name: "Quantum Mechanics", description: "Quantum mechanics is a fundamental theory in physics that provides a description of the physical properties of nature at the scale of atoms and subatomic particles", avatarName: "quantum mechanics"),
-        Community(name: "Quantum Mechanics", description: "Quantum mechanics is a fundamental theory in physics that provides a description of the physical properties of nature at the scale of atoms and subatomic particles", avatarName: "quantum mechanics"),
-        Community(name: "Quantum Mechanics", description: "Quantum mechanics is a fundamental theory in physics that provides a description of the physical properties of nature at the scale of atoms and subatomic particles", avatarName: "quantum mechanics"),
-        Community(name: "Quantum Mechanics", description: "Quantum mechanics is a fundamental theory in physics that provides a description of the physical properties of nature at the scale of atoms and subatomic particles", avatarName: "quantum mechanics"),
-        Community(name: "Quantum Mechanics", description: "Quantum mechanics is a fundamental theory in physics that provides a description of the physical properties of nature at the scale of atoms and subatomic particles", avatarName: "quantum mechanics"),
-        Community(name: "Quantum Mechanics", description: "Quantum mechanics is a fundamental theory in physics that provides a description of the physical properties of nature at the scale of atoms and subatomic particles", avatarName: "quantum mechanics")
-    ]
+    
+    override class func primaryKey() -> String? {
+        return "id"
+    }
 }

@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct FriendsView: View {
-    let friends = FriendsStorage.friends
-    let firstLetters = FriendsStorage.firstLetters
+    
+    @ObservedObject var friendsVM: FriendsViewModel
     
     var body: some View {
         NavigationView {
-            List(firstLetters, id: \.self) { letter in
+            List(friendsVM.firstLetters, id: \.self) { letter in
                 Section(header: Text(letter).font(.title)) {
-                    ForEach(friends) { friend in
+                    ForEach(friendsVM.friends, id: \.self) { friend in
                         if friend.prefix == letter {
                             ZStack {
                                 FriendRow(friend: friend)
@@ -26,9 +26,13 @@ struct FriendsView: View {
                             }
                         }
                     }
+                    .listRowSeparator(.hidden)
                 }
-                .listStyle(.sidebar)
-                .navigationBarTitle(Text("Friends"))
+            }
+            .listStyle(.sidebar)
+            .navigationBarTitle(Text("Friends"))
+            .onAppear {
+                friendsVM.fetch()
             }
         }
     }

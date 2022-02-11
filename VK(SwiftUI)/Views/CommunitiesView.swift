@@ -8,15 +8,20 @@
 import SwiftUI
 
 struct CommunitiesView: View {
-    let communities = CommunitiesStorage.communities
+    
+    @ObservedObject var communitiesVM: CommunitiesViewModel
     
     var body: some View {
         NavigationView {
-            List(communities) { community in
+            List(communitiesVM.communities, id: \.self) { community in
                 CommunityRow(community: community)
+                    .listRowSeparator(.hidden)
             }
             .listStyle(.sidebar)
             .navigationBarTitle(Text("Communities"))
+            .onAppear {
+                communitiesVM.fetch()
+            }
         }
     }
 }
