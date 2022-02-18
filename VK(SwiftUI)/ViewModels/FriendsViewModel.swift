@@ -13,15 +13,11 @@ class FriendsViewModel: ObservableObject {
     private var realmFriends: Results<Friend>?
     var friends: [Friend] = []
     var firstLetters: [String] = []
-    let api: FriendsAPI
+    let api = FriendsAPI()
     let realmService = RealmService.shared
     
     let objectWillChange = ObjectWillChangePublisher()
     var token: NotificationToken?
-    
-    init(api: FriendsAPI) {
-        self.api = api
-    }
     
     func fetch() {
         api.getFriends { [weak self] result in

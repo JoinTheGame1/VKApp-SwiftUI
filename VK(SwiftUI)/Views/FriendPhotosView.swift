@@ -6,30 +6,29 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct FriendPhotosView: View {
     
-    var friend: Friend
+    @ObservedObject var friendPhotosVM: FriendPhotosViewModel
+    
     let layout = [
         GridItem(.adaptive(minimum: 120))
     ]
     
     var body: some View {
         ScrollView {
-//            LazyVGrid(columns: layout, spacing: 20) {
-//                ForEach(friend.photos, id: \.self) { item in
-//                    Image(item)
-//                        .resizable()
-//                        .scaledToFill()
-//                        .frame(width: 120, height: 120)
-//                        .clipShape(Rectangle())
-//                        .cornerRadius(12)
-//                }
-//            }
-//            .padding(16)
-            Text("Photo")
+            LazyVGrid(columns: layout, spacing: 20) {
+                ForEach(friendPhotosVM.photos, id: \.self) { item in
+                    FriendPhotoItemView(photo: item)
+                }
+            }
+            .padding(16)
         }
-        .navigationBarTitle(friend.name)
+        .navigationBarTitle(friendPhotosVM.owner.name)
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            friendPhotosVM.fetch()
+        }
     }
 }

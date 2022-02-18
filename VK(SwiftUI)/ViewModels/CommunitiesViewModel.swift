@@ -12,15 +12,11 @@ class CommunitiesViewModel: ObservableObject {
     
     private var realmCommunities: Results<Community>?
     var communities: [Community] = []
-    let api: CommunitiesAPI
+    let api = CommunitiesAPI()
     let realmService = RealmService.shared
     
     let objectWillChange = ObjectWillChangePublisher()
     var token: NotificationToken?
-    
-    init(api: CommunitiesAPI) {
-        self.api = api
-    }
     
     func fetch() {
         api.getGroups { [weak self] result in
