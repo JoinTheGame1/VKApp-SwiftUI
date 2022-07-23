@@ -20,6 +20,7 @@ struct CommunitiesView: View {
             .listStyle(.sidebar)
             .navigationBarTitle(Text("Communities"))
             .onAppear {
+                UITableView.appearance().backgroundColor = UIColor.clear
                 communitiesVM.fetch()
             }
         }

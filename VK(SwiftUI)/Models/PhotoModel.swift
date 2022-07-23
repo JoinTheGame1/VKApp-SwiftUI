@@ -10,12 +10,14 @@ import RealmSwift
 
 // MARK: - Photos
 struct Photos: Codable {
+    
     let count: Int
     let items: [Photo]
 }
 
 // MARK: - Photo
 class Photo: Object, Codable {
+    
     @objc dynamic var ownerId: Int = 0
     var sizes = List<Size>()
     var fineSizeUrl: String { return sizes.last?.url ?? "" }
@@ -30,6 +32,7 @@ class Photo: Object, Codable {
 
 //MARK: - Size
 class Size: Object, Codable {
+    
     @objc dynamic var url: String
     @objc dynamic var width: Int
     @objc dynamic var height: Int
@@ -39,6 +42,7 @@ class Size: Object, Codable {
 
 //MARK: - Like
 class Like: Object, Codable {
+    
     @objc dynamic var count: Int
     @objc dynamic var user_likes: Int
     
@@ -47,5 +51,6 @@ class Like: Object, Codable {
 
 //MARK: - Repost
 class Repost: Object, Codable {
+    
     @objc dynamic var count: Int
 }

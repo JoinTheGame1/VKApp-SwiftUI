@@ -24,7 +24,7 @@ struct FriendsView: View {
                                 ) {
                                     EmptyView()
                                 }
-                                .frame(width: 0, height: 0)
+                                .opacity(0)
                             }
                         }
                     }
@@ -34,6 +34,7 @@ struct FriendsView: View {
             .listStyle(.sidebar)
             .navigationBarTitle(Text("Friends"))
             .onAppear {
+                UITableView.appearance().backgroundColor = UIColor.clear
                 friendsVM.fetch()
             }
         }

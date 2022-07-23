@@ -25,4 +25,15 @@ class RealmService {
             print(error)
         }
     }
+    
+    func cacheAccount(_ data: Account) {
+        do {
+//            print(realm?.configuration.fileURL ?? "")
+            realm?.beginWrite()
+            realm?.add(data, update: .modified)
+            try realm?.commitWrite()
+        } catch {
+            print(error)
+        }
+    }
 }

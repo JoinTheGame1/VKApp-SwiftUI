@@ -15,18 +15,25 @@ struct FriendRow: View {
     
     var body: some View {
         HStack(spacing: 4) {
-            KFImage(URL(string: friend.photo))
-                .resizable()
-                .modifier(CircleAvatar(frameWidth: 52,
-                                       frameHeight: 52,
-                                       borderColor: .secondary))
-                .padding(4)
-                .scaleEffect(imageTapped ? 1.2 : 1)
-                .onTapGesture {
-                    withAnimation(animation()) {
-                        imageTapped.toggle()
+            ZStack {
+                KFImage(URL(string: friend.photo))
+                    .resizable()
+                    .modifier(CircleAvatar(frameWidth: 52, frameHeight: 52))
+                    .padding(4)
+                    .scaleEffect(imageTapped ? 1.2 : 1)
+                    .onTapGesture {
+                        withAnimation(animation()) {
+                            imageTapped.toggle()
+                        }
                     }
+                if friend.online == 1 {
+                    Circle()
+                        .strokeBorder(Color(UIColor.secondarySystemBackground), lineWidth: 2)
+                        .background(Circle().foregroundColor(.green))
+                        .frame(width: 16, height: 16)
+                        .offset(x: 20, y: 20)
                 }
+            }
             VStack(alignment: .leading, spacing: 4) {
                 Text(friend.name)
                 if !friend.cityName.isEmpty {
@@ -37,15 +44,11 @@ struct FriendRow: View {
             }
             Spacer()
             Group {
-                Button(action: {
-                    print("Call a \(friend.name)")
-                }, label: {
+                Button(action: {}, label: {
                     Image(systemName: "phone")
                         .resizable()
                 })
-                Button(action: {
-                    print("Message to \(friend.name)")
-                }, label: {
+                Button(action: {}, label: {
                     Image(systemName: "message")
                         .resizable()
                 })

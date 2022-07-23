@@ -22,13 +22,16 @@ struct FriendPhotoItemView: View {
     
     var body: some View {
         VStack {
-            KFImage(URL(string: photo.fineSizeUrl))
-                .resizable()
-                .scaledToFill()
-                .modifier(RoundedImage(frameWidth: 120,
-                                       frameHeight: 120,
-                                       cornerRadius: 12,
-                                       borderColor: .secondary))
+            NavigationLink(destination: LargePhotoView(photo: photo)) {
+                KFImage(URL(string: photo.fineSizeUrl))
+                    .resizable()
+                    .scaledToFill()
+                    .modifier(RoundedImage(frameWidth: 170,
+                                           frameHeight: 170,
+                                           cornerRadius: 12,
+                                           borderColor: .secondary))
+            }
+            
             HStack {
                 Image(systemName: isLiked ? "heart.fill" : "heart")
                 Text("\(count)")
@@ -41,7 +44,6 @@ struct FriendPhotoItemView: View {
                     self.count = self.isLiked ? self.count + 1 : self.count - 1
                 }
             }
-            
         }
     }
 }

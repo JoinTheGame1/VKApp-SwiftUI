@@ -11,15 +11,17 @@ import RealmSwift
 struct ContainerView: View {
     
     @ObservedObject var session = MySession.shared
+    @StateObject var tabViewRouter = TabViewRouter()
     
     var body: some View {
         NavigationView {
             HStack {
-                VKLoginWebView()
+                LoginView()
             }
             .fullScreenCover(isPresented: $session.isAutorized, onDismiss: nil) {
-                MainView()
+                MainView(tabViewRouter: tabViewRouter)
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }

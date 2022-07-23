@@ -22,6 +22,7 @@ class Friend: Object, Codable, ProfileRepresentable {
     @objc dynamic var firstName: String = ""
     @objc dynamic var city: City?
     @objc dynamic var photo: String = ""
+    @objc dynamic var online: Int = 0
     
     var name: String { return firstName + " " + lastName } 
     var prefix: String { return String(lastName.first ?? " ") }
@@ -33,6 +34,7 @@ class Friend: Object, Codable, ProfileRepresentable {
         case firstName = "first_name"
         case city
         case photo = "photo_100"
+        case online
     }
     
     override class func primaryKey() -> String? {

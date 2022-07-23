@@ -1,29 +1,25 @@
 //
-//  FriendsAPI.swift
+//  AccountAPI.swift
 //  VK(SwiftUI)
 //
-//  Created by Никитка on 30.01.2022.
+//  Created by Никитка on 08.02.2022.
 //
 
 import Foundation
 import Alamofire
-import Realm
 
-final class FriendsAPI {
+class AccountAPI {
     
     let baseUrl = "https://api.vk.com/method"
     let token = MySession.shared.token
-    let userId = MySession.shared.userId
     let version = "5.131"
     
-    func getFriends(completion: @escaping (Result<[Friend], APIerror>) -> Void) {
-        let method = "/friends.get"
+    func getAccountInfo(completion: @escaping (Result<Account, APIerror>) -> Void) {
+        let method = "/users.get"
         
         let parameters: Parameters = [
-            "user_id": userId,
-            "order": "hints",
-            "count": 1000,
-            "fields": "city, photo_100, online",
+            "fields": "photo_200, status, counters, contacts, city",
+            "name_case": "nom",
             "access_token": token,
             "v": version
         ]
@@ -43,9 +39,10 @@ final class FriendsAPI {
             }
             
             do {
-                let responseFriends = try JSONDecoder().decode(Response<Friend>.self, from: data)
-                let friends = responseFriends.response.items
-                completion(.success(friends))
+                let response = try JSONDecoder().decode(AccountResponse.self, from: data)
+                if let account = response.response.first {
+                    completion(.success(account))
+                }
             } catch {
                 completion(.failure(.decodeError))
             }

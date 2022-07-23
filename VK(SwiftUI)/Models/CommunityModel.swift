@@ -10,6 +10,7 @@ import RealmSwift
 
 // MARK: - Group
 class Community: Object, Codable, ProfileRepresentable {
+    
     @objc dynamic var id: Int = 0
     @objc dynamic var name: String = ""
     @objc dynamic var photo: String = ""
